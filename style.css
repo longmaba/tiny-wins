@@ -1,0 +1,146 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+}
+
+@keyframes slideInFade {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.win-item {
+    opacity: 0;
+    animation: slideInFade 0.4s ease-out forwards;
+}
+
+#winsList>div:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+#winsList>div:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+@keyframes counterPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+        color: #16a34a;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.counter-pop-animation {
+    display: inline-block;
+    animation: counterPop 0.3s ease-in-out;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sparkle-effect {
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    font-size: 1.2em;
+    color: #fbbf24;
+    animation: sparkle 0.5s ease-in-out forwards;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sparkle-effect.active {
+    opacity: 1;
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#milestoneMessage {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(22, 163, 74, 0.9);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    font-weight: 500;
+}
+
+#milestoneMessage.show {
+    opacity: 1;
+    animation: fadeInOut 3.5s ease-in-out forwards;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+.trophy-pulse {
+    display: inline-block;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+#addWinForm {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+} 
